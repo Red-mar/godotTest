@@ -15,7 +15,6 @@ public class map : TileMap
     public int?[,] grid {get; set;}
     Random random;
 
-
     public override void _Ready()
     {
         PackedScene obstacle = (PackedScene)ResourceLoader.Load("res://Obstacle.tscn");
@@ -69,7 +68,15 @@ public class map : TileMap
         {
             if (gridPos.y < gridSize.y && gridPos.y >= 0)
             {
-                return grid[(int)gridPos.x,(int)gridPos.y] == null ? true : false;
+                Console.WriteLine(gridPos.x + ":" + gridPos.y);
+                if (grid[(int)gridPos.x,(int)gridPos.y] == null)
+                {
+                    return true;
+                }
+                if(grid[(int)gridPos.x,(int)gridPos.y] == (int)ENTITY_TYPES.COLLECTIBLE){
+                    return true;
+                    
+                }
             }
         }
         return false;
@@ -78,7 +85,7 @@ public class map : TileMap
     public Vector2 UpdateChildPos(Vector2 newPosition, Vector2 direction, ENTITY_TYPES type){
         Vector2 gridPos = WorldToMap(newPosition);
 
-        grid[(int)gridPos.x,(int)gridPos.y] = null;
+        grid[(int)gridPos.x,(int)gridPos.y] = (int)ENTITY_TYPES.COLLECTIBLE;
 
         gridVisual visual = (gridVisual)GetNode("gridVisual");
         visual.Update();
@@ -87,6 +94,7 @@ public class map : TileMap
         grid[(int)newGridPos.x,(int)newGridPos.y] = (int)type;
 
         Vector2 targetPos = MapToWorld(newGridPos) + halfTileSize;
+
         return targetPos;
     }
 

@@ -55,7 +55,8 @@ public class player : KinematicBody2D
 
         if (!isMoving && direction != new Vector2(0,0))
         {
-            targetDirection = direction.Normalized();
+            targetDirection = direction;
+            Console.WriteLine("checking file is vacant.");
             if (grid.IsCellVacant(GetPosition(), targetDirection))
             {
                 targetPos = grid.UpdateChildPos(GetPosition(), direction, type);
@@ -65,18 +66,18 @@ public class player : KinematicBody2D
         else if (isMoving){
             speed = MAX_SPEED;
             velocity = speed * targetDirection * delta;
-            
+            Console.WriteLine("cDir = " + direction.x + ":" + direction.y);
+            Console.WriteLine("tDir = " + targetDirection.x + ":" + targetDirection.y);
 
             Vector2 position = GetPosition();
             float distanceToTarget = position.DistanceTo(targetPos);
             float moveDistance = velocity.Length();
             if (moveDistance > distanceToTarget)
             {
-                velocity = targetDirection * distanceToTarget;
+                velocity = targetDirection.Normalized() * distanceToTarget; //only normalize speed
                 isMoving = false;
             }
             MoveAndCollide(velocity);
-            Console.WriteLine(velocity+"speed units");
         }
         
     }

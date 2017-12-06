@@ -43,7 +43,7 @@ public class gridVisual : Node2D
                 int? i = grid.grid[x,y];
                 if (i == null)
                 {
-                    DrawRect(new Rect2(grid.MapToWorld(new Vector2(x,y)), grid.gridSize), lineColor);
+                    DrawRect(new Rect2(grid.MapToWorld(new Vector2(x,y)), grid.gridSize*2), lineColor);
                 }
             }
         }

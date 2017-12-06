@@ -3,3 +3,8 @@ C:\Users\redmar\Documents\Godot_v3.0-beta1\Grid\.mono\temp\bin\Tools\Grid.pdb
 C:\Users\redmar\Documents\Godot_v3.0-beta1\Grid\.mono\temp\obj\Tools\Grid.csprojResolveAssemblyReference.cache
 C:\Users\redmar\Documents\Godot_v3.0-beta1\Grid\.mono\temp\obj\Tools\Grid.dll
 C:\Users\redmar\Documents\Godot_v3.0-beta1\Grid\.mono\temp\obj\Tools\Grid.pdb
+C:\Users\a\Desktop\git\godotTest\.mono\temp\bin\Tools\Grid.dll
+C:\Users\a\Desktop\git\godotTest\.mono\temp\bin\Tools\Grid.pdb
+C:\Users\a\Desktop\git\godotTest\.mono\temp\obj\Tools\Grid.csprojResolveAssemblyReference.cache
+C:\Users\a\Desktop\git\godotTest\.mono\temp\obj\Tools\Grid.dll
+C:\Users\a\Desktop\git\godotTest\.mono\temp\obj\Tools\Grid.pdb
